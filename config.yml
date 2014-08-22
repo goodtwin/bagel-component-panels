@@ -1,4 +1,7 @@
-template:
+panels:
   include: true
   theme:
     prototype: true
+mediaquery:
+  under-desk-wide:
+    include: true

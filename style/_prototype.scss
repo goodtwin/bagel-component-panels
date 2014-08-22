@@ -1,4 +1,53 @@
-@mixin template-prototype {
+// helpers for pseudoshadow
+@mixin panels-pseudoshadow {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 20px;
+	top: 0;
+	z-index: 1001;
+}
+
+@mixin panels-theme-prototype {
+
+	/* Style & Variations
+		======================================== */
+	.ui.panels {
+
+	  .inverted.panel {
+	    background-color: palette(neutral, dark);
+	  }
+	  .left.shadow.panel {
+			box-shadow: inset -5px 0 8px -5px rgba(0, 0, 0, 0.7);
+	  }
+		.right.shadow.panel {
+			box-shadow: inset 5px 0 6px -6px rgba(0, 0, 0, 0.5);
+		}
+	  .left.floating.panel {
+			box-shadow: 2px 0 4px 0 rgba(0,0,0,0.3);
+	  }
+		.right.floating.panel {
+			box-shadow: -2px 0 4px 0 rgba(0,0,0,0.3);
+		}
+		
+	  .left.pseudoshadow.panel {
+
+	    &:before {
+				@include panels-pseudoshadow;
+				right:-20px;
+				box-shadow: -5px 0 8px -5px rgba(0, 0, 0, 0.7);
+	    }
+	  }
+	  .right.pseudoshadow.panel {
+
+	    &:before {
+				@include panels-pseudoshadow;
+				left: -20px;
+				box-shadow: 5px 0 6px -6px rgba(0, 0, 0, 0.6);
+	    }
+	  }
+	}
+
 	/*******************************
 							Template
 	*******************************/

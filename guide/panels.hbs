@@ -1,0 +1,156 @@
+---
+css         : 'panels'
+title       : 'Panels'
+description : 'Panels for handling common layout areas in an interface.'
+tags:
+  - collection
+---
+
+<h2 class="ui dividing header">Panels</h2>
+
+
+<h2 class="ui dividing header">Types</h2>
+
+<div class="example">
+  <h4 class="ui header">Two Panels</h4>
+  <p>A basic left and right floating panels.</p>
+  <div class="ui two panels opened-left opened-right"
+    style="border: 1px solid grey;height: 300px; width: 600px;">
+    <div class="left panel" style="background:red;">Left Panel</div>
+    <div class="right panel" style="background:blue;">Right Panel</div>
+  </div>
+</div>
+
+
+<div class="example">
+  <h4 class="ui header">Three Panels Panels</h4>
+  <p>A basic left and right floating panels. With a middle panel that taks up the remaining space.</p>
+  <div class="ui three panels opened-left opened-right"
+  style="border: 1px solid grey;height: 300px; width: 600px;">
+    <div class="left panel" style="background:red;">Left Panel</div>
+    <div class="middle panel" style="background:green;">Middle Panel</div>
+    <div class="right panel" style="background:blue;">Right Panel</div>
+  </div>
+</div>
+
+<div id="toggleExample" class="example">
+  <h4 class="ui header">Opening/Closing Panels</h4>
+  <p>Left and right floating panels can be opened and closed.</p>
+  <div class="ui two panels opened-left opened-right"
+  style="border: 1px solid grey;height: 300px; width: 600px;">
+    <div class="left panel" style="background:red;">Left Panel</div>
+    <div class="right panel" style="background:blue;">Right Panel</div>
+  </div>
+  <div>
+    <a href="#" id="toggleExampleLeft">Close Left Panel</a>
+  </div>
+  <div>
+    <a href="#" id="toggleExampleRight">Close Right Panel</a>
+  </div>
+</div>
+<script charset="utf-8">
+  $(function(){
+    $(document).on('click', '#toggleExampleLeft', function(e){
+      e.preventDefault();
+      $('#toggleExample').find('.ui.panels').toggleClass('opened-left');
+    }).on('click', '#toggleExampleRight', function(e){
+      e.preventDefault();
+      $('#toggleExample').find('.ui.panels').toggleClass('opened-right');
+    });
+  });
+</script>
+
+<div id="toggleExample2" class="example">
+  <h4 class="ui header">Opening/Closing Panels</h4>
+  <p>Left and right floating panels can be opened and closed. Middle Panel will adjust</p>
+  <div class="ui three panels opened-left opened-right"
+  style="border: 1px solid grey;height: 300px; width: 600px;">
+    <div class="left panel" style="background:red;">Left Panel</div>
+    <div class="middle panel" style="background:green;">Middle Panel</div>
+    <div class="right panel" style="background:blue;">Right Panel</div>
+  </div>
+  <div>
+    <a href="#" id="toggleExampleLeft2">Close Left Panel</a>
+  </div>
+  <div>
+    <a href="#" id="toggleExampleRight2">Close Right Panel</a>
+  </div>
+</div>
+<script charset="utf-8">
+  $(function(){
+    $(document).on('click', '#toggleExampleLeft2', function(e){
+      e.preventDefault();
+      $('#toggleExample2').find('.ui.panels').toggleClass('opened-left');
+    }).on('click', '#toggleExampleRight2', function(e){
+      e.preventDefault();
+      $('#toggleExample2').find('.ui.panels').toggleClass('opened-right');
+    });
+  });
+</script>
+
+<h2 class="ui dividing header">Variations</h2>
+
+<div class="example">
+  <h4 class="ui header">Large Side Panels</h4>
+  <div class="ui three panels opened-left opened-right large-left large-right"
+  style="border: 1px solid grey;height: 300px; width: 800px;">
+    <div class="left panel" style="background:red;">Left Panel</div>
+    <div class="middle panel" style="background:green;">Middle Panel</div>
+    <div class="right panel" style="background:blue;">Right Panel</div>
+  </div>
+</div>
+
+<div class="example">
+  <h4 class="ui header">Huge Side Panels</h4>
+  <div class="ui three panels opened-left opened-right huge-left huge-right"
+  style="border: 1px solid grey;height: 300px; width: 800px;">
+    <div class="left panel" style="background:red;">Left Panel</div>
+    <div class="middle panel" style="background:green;">Middle Panel</div>
+    <div class="right panel" style="background:blue;">Right Panel</div>
+  </div>
+</div>
+
+<div class="example">
+  <h4 class="ui header">Reduced Left Panel</h4>
+  <p>Can reduced to a smaller size via class.</p>
+  <div class="ui reducable three panels opened-left opened-right reduced-left"
+  style="border: 1px solid grey;height: 300px; width: 800px;">
+    <div class="left panel" style="background:red;">Left Panel</div>
+    <div class="middle panel" style="background:green;">Middle Panel</div>
+    <div class="right panel" style="background:blue;">Right Panel</div>
+  </div>
+</div>
+
+<div class="example">
+  <h4 class="ui header">Reducable Left Panel</h4>
+  <p>Can reduce the left panel to be smaller under desktop sizes. Useful for responsive side menus.</p>
+  <div class="ui ignored message">In this example will reduce at 1200px.</div>
+  <div class="ui reducable three panels opened-left opened-right"
+  style="border: 1px solid grey;height: 300px; width: 800px;">
+    <div class="left panel" style="background:red;">Left Panel</div>
+    <div class="middle panel" style="background:green;">Middle Panel</div>
+    <div class="right panel" style="background:blue;">Right Panel</div>
+  </div>
+</div>
+
+<div class="example">
+  <h4 class="ui header">Shadowed Panels</h4>
+  <p>Middle panel can appear to be above side panels.</p>
+  <div class="ui reducable three panels opened-left opened-right"
+  style="border: 1px solid grey;height: 300px; width: 800px;">
+    <div class="left shadow panel" style="background:red;">Left Panel</div>
+    <div class="middle panel" style="background:green;">Middle Panel</div>
+    <div class="right shadow panel" style="background:blue;">Right Panel</div>
+  </div>
+</div>
+
+<div class="example">
+  <h4 class="ui header">Floating Panels</h4>
+  <p>Side panels can appear float with a drop shadow.</p>
+  <div class="ui reducable three panels opened-left opened-right"
+  style="border: 1px solid grey;height: 300px; width: 800px;">
+    <div class="left floating panel" style="background:red;">Left Panel</div>
+    <div class="middle panel" style="background:green;">Middle Panel</div>
+    <div class="right floating panel" style="background:blue;">Right Panel</div>
+  </div>
+</div>
